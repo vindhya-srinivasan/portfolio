@@ -122,6 +122,26 @@ nav{
   border:none;border-top:1px solid var(--line2);margin-top:12px;margin-bottom:28px;
 }
 
+
+/* ── experience dropdown ── */
+.exp-toggle{
+  display:flex;align-items:center;gap:8px;
+  margin-top:14px;cursor:pointer;
+  font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--muted);border:none;background:none;padding:0;
+  font-family:var(--ff);transition:color .2s;
+}
+.exp-toggle:hover{color:var(--ac)}
+.exp-toggle svg{transition:transform .25s;flex-shrink:0}
+.exp-toggle.open svg{transform:rotate(180deg)}
+.exp-body{
+  overflow:hidden;
+  max-height:0;
+  transition:max-height .35s cubic-bezier(.4,0,.2,1), opacity .25s;
+  opacity:0;
+}
+.exp-body.open{max-height:2000px;opacity:1}
+
 /* institution strip */
 .inst-strip{
   display:flex;flex-direction:column;
@@ -532,6 +552,11 @@ nav{
           <div class="em-box"><div class="em-n">93%</div><div class="em-l">Test coverage</div></div>
           <div class="em-box"><div class="em-n">35%</div><div class="em-l">Faster releases</div></div>
         </div>
+        <button class="exp-toggle" onclick="toggleExp(this)">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5L7 9.5L12 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Show details
+        </button>
+        <div class="exp-body">
         <div class="ach-list">
           <div class="ach"><div class="ach-text">Redesigned async event-driven pipelines over legacy systems: cut processing from <strong>40 minutes to under 1 minute</strong> across 10,000+ vehicle specification records</div><div class="ach-badge">97% faster</div></div>
           <div class="ach"><div class="ach-text">Built full-stack systems with <strong>Java Spring Boot, Python, and React</strong>: 2,000+ internal users, 100,000+ requests per day with async processing and multithreading</div><div class="ach-badge">100K+ req/day</div></div>
@@ -542,6 +567,7 @@ nav{
           <div class="ach"><div class="ach-text">Flew to <strong>Böblingen, Germany</strong> to present a Generative AI prototype for car component specifications to executive stakeholders: live demo of LLM-backed vehicle spec retrieval</div><div class="ach-badge">Böblingen, Germany</div></div>
           <div class="ach"><div class="ach-text">Designed modular <strong>microservices architecture</strong> with clean API contracts, role-based access control, JWT authentication, and structured logging</div><div class="ach-badge">Microservices</div></div>
           <div class="ach"><div class="ach-text">Drove <strong>Agile Scrum sprints</strong> across distributed teams: sprint planning, design reviews, and cross-functional code reviews</div><div class="ach-badge">Agile / Scrum</div></div>
+        </div>
         </div>
       </div>
     </div>
@@ -562,6 +588,11 @@ nav{
           <div class="em-box"><div class="em-n">60%</div><div class="em-l">Faster lookups</div></div>
           <div class="em-box"><div class="em-n">25%</div><div class="em-l">Infra cost saved</div></div>
         </div>
+        <button class="exp-toggle" onclick="toggleExp(this)">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5L7 9.5L12 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Show details
+        </button>
+        <div class="exp-body">
         <ul class="pts">
           <li>Built <strong>SQL-backed analytics services</strong> tracking 50+ vehicle KPIs: reduced manual reporting effort by 40%</li>
           <li>Streamlined access to 10,000+ vehicle records via <strong>query optimization and Redis caching</strong>: 60% faster lookups</li>
@@ -569,6 +600,7 @@ nav{
           <li>Built <strong>full-stack REST services</strong> powering internal engineering dashboards: 30% reduction in resource underutilization</li>
           <li>Applied <strong>object-oriented design</strong> to build modular backend components with clear API contracts and automated Python workflows</li>
         </ul>
+        </div>
       </div>
     </div>
 
@@ -587,12 +619,18 @@ nav{
           <div class="em-box"><div class="em-n">20+</div><div class="em-l">Teams reached</div></div>
           <div class="em-box"><div class="em-n">30%</div><div class="em-l">Underutilization cut</div></div>
         </div>
+        <button class="exp-toggle" onclick="toggleExp(this)">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M2 4.5L7 9.5L12 4.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          Show details
+        </button>
+        <div class="exp-body">
         <ul class="pts">
           <li>Built a <strong>React and JavaScript frontend dashboard</strong> to analyze tool adoption across 20+ engineering teams, enabling data-driven platform decisions</li>
           <li>Built <strong>SQL-backed REST API services</strong> reducing resource underutilization by 30% through backend optimization</li>
           <li>Shipped a <strong>Node.js dashboard with Bash automation</strong>, collaborating with solution architects to present findings cross-functionally</li>
           <li>Developed production-grade <strong>HTML5 and CSS3 frontend features</strong> integrated with REST APIs in an Agile environment</li>
         </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -635,6 +673,9 @@ nav{
         <span class="sk-b">TypeScript</span>
         <span class="sk-b">SQL</span>
         <span class="sk-b">Bash</span>
+        <span class="sk-b">JSON</span>
+        <span class="sk-b">XML</span>
+        <span class="sk-b">YAML</span>
       </div>
     </div>
 
@@ -654,6 +695,8 @@ nav{
         <span class="sk-b">Kafka</span>
         <span class="sk-b">Celery</span>
         <span class="sk-b">WebSockets</span>
+        <span class="sk-b">Swagger</span>
+        <span class="sk-b">Postman</span>
       </div>
     </div>
 
@@ -712,6 +755,14 @@ nav{
     </div>
 
     <div class="sk-group">
+      <div class="sk-group-label">Operating Systems</div>
+      <div class="sk-bubbles">
+        <span class="sk-b">Windows</span>
+        <span class="sk-b">Linux</span>
+      </div>
+    </div>
+
+    <div class="sk-group">
       <div class="sk-group-label">Security</div>
       <div class="sk-bubbles">
         <span class="sk-b">JWT Authentication</span>
@@ -753,7 +804,7 @@ nav{
       <div class="contact-head">Open to opportunities in 2026</div>
       <div class="contact-sub">New grad software engineering roles, internships, and research collaborations. Based in Los Angeles, open to remote and relocation.</div>
       <div class="c-links">
-        <a href="mailto:vindhyas@usc.edu" class="c-link"><div class="c-icon">@</div><div><span class="cl-lbl">Email</span><span class="cl-val">vindhyas@usc.edu</span></div></a>
+        <a href="mailto:vindhyaiyer00@gmail.com" class="c-link"><div class="c-icon">@</div><div><span class="cl-lbl">Email</span><span class="cl-val">vindhyaiyer00@gmail.com</span></div></a>
         <a href="https://linkedin.com/in/vindhya-srinivasan-3a8393216" target="_blank" class="c-link"><div class="c-icon">in</div><div><span class="cl-lbl">LinkedIn</span><span class="cl-val">vindhya-srinivasan-3a8393216</span></div></a>
         <div class="c-link"><div class="c-icon">LA</div><div><span class="cl-lbl">Location</span><span class="cl-val">Los Angeles, California</span></div></div>
       </div>
@@ -897,6 +948,19 @@ cForm.addEventListener('submit',async e=>{
     else{fBtn.textContent='Error: email me directly';fBtn.disabled=false}
   }catch{fBtn.textContent='Error: email me directly';fBtn.disabled=false}
 });
+</script>
+
+<script>
+function toggleExp(btn){
+  var body = btn.nextElementSibling;
+  var isOpen = body.classList.toggle('open');
+  btn.classList.toggle('open');
+  for(var n of btn.childNodes){
+    if(n.nodeType===3 && n.textContent.trim()){
+      n.textContent = isOpen ? ' Hide details' : ' Show details';
+    }
+  }
+}
 </script>
 </body>
 </html>
