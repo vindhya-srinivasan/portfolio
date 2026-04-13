@@ -167,7 +167,7 @@ nav{
 .sec-h2 em{font-family:var(--fi);font-style:italic;font-weight:300;color:var(--sub)}
 
 /* ══ ABOUT ══ */
-.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:start}
+.about-layout{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
 
 .who-label{font-size:10px;font-weight:700;color:var(--ac);letter-spacing:.12em;text-transform:uppercase;margin-bottom:12px}
 .who-title{font-size:22px;font-weight:900;color:var(--white);letter-spacing:-.04em;margin-bottom:14px;line-height:1.15}
@@ -444,9 +444,9 @@ nav{
       <div class="who-label">Who I am</div>
       <div class="who-title">I build things that <em>hold up</em>.</div>
       <div class="who-body">
-        Three years at <strong>Mercedes-Benz Research &amp; Development India</strong> shipping full-stack systems: REST APIs, async pipelines, React dashboards, and observability tooling used daily by thousands of engineers. I've also been to <strong>Böblingen, Germany</strong> to demonstrate a GenAI prototype to executive stakeholders: one of those experiences that stays with you.<br/><br/>
-        Now at the <strong>University of Southern California</strong>, going deeper into distributed systems, machine learning, and AI engineering. I'm drawn to the infrastructure layer: the part that has to be right, or nothing else works.
-      </div>
+      Currently a <strong>Computer Science Master's</strong> student at <strong>USC</strong>, and before this I worked as a <strong>Full-Stack Software Engineer</strong> at <strong>Mercedes-Benz R&D India</strong>, building systems that thousands of engineers depended on every single day. That meant REST APIs, asynchronous pipelines, React dashboards, and observability tooling that had to be reliable because people were counting on it. At some point along the way I got to fly out to <strong>Böblingen, Germany</strong> to demo a GenAI prototype directly to executive stakeholders, which is one of those experiences that sticks with you and reminds you how far solid engineering can actually take you.<br/><br/>
+      Now I am at <strong>USC</strong> going deeper into the things that have always pulled me in: distributed systems, machine learning, and AI engineering. I am most drawn to the infrastructure layer, the part of a system that has to be right, because if it is not, nothing built on top of it stands a chance.
+    </div>
       <div class="who-tags">
         <span class="wtag">Full-Stack Engineering</span>
         <span class="wtag">Distributed Systems</span>
@@ -553,13 +553,13 @@ nav{
           <div class="em-box"><div class="em-n">60%</div><div class="em-l">Faster lookups</div></div>
           <div class="em-box"><div class="em-n">25%</div><div class="em-l">Infra cost saved</div></div>
         </div>
-        <ul class="pts">
-          <li>Built <strong>SQL-backed analytics services</strong> tracking 50+ vehicle KPIs: reduced manual reporting effort by 40%</li>
-          <li>Streamlined access to 10,000+ vehicle records via <strong>query optimization and Redis caching</strong>: 60% faster lookups</li>
-          <li>Implemented <strong>Prometheus and Grafana dashboards</strong>: 40% faster incident detection, 25% infrastructure cost savings</li>
-          <li>Built <strong>full-stack REST services</strong> powering internal engineering dashboards: 30% reduction in resource underutilization</li>
-          <li>Applied <strong>object-oriented design</strong> to build modular backend components with clear API contracts and automated Python workflows</li>
-        </ul>
+        <div class="ach-list">
+          <div class="ach"><div class="ach-text">Built <strong>SQL-backed analytics services</strong> tracking 50+ vehicle KPIs: reduced manual reporting effort by 40%</div><div class="ach-badge">40% less effort</div></div>
+          <div class="ach"><div class="ach-text">Streamlined access to 10,000+ vehicle records via <strong>query optimization and Redis caching</strong>: 60% faster lookups</div><div class="ach-badge">60% faster</div></div>
+          <div class="ach"><div class="ach-text">Implemented <strong>Prometheus and Grafana dashboards</strong>: 40% faster incident detection, 25% infrastructure cost savings</div><div class="ach-badge">40% MTTD cut</div></div>
+          <div class="ach"><div class="ach-text">Built <strong>full-stack REST services</strong> powering internal engineering dashboards: 30% reduction in resource underutilization</div><div class="ach-badge">30% efficiency</div></div>
+          <div class="ach"><div class="ach-text">Applied <strong>object-oriented design</strong> to build modular backend components with clear API contracts and automated Python workflows</div><div class="ach-badge">OOP / Python</div></div>
+        </div>
       </div>
     </div>
 
@@ -578,12 +578,12 @@ nav{
           <div class="em-box"><div class="em-n">20+</div><div class="em-l">Teams reached</div></div>
           <div class="em-box"><div class="em-n">30%</div><div class="em-l">Underutilization cut</div></div>
         </div>
-        <ul class="pts">
-          <li>Built a <strong>React and JavaScript frontend dashboard</strong> to analyze tool adoption across 20+ engineering teams, enabling data-driven platform decisions</li>
-          <li>Built <strong>SQL-backed REST API services</strong> reducing resource underutilization by 30% through backend optimization</li>
-          <li>Shipped a <strong>Node.js dashboard with Bash automation</strong>, collaborating with solution architects to present findings cross-functionally</li>
-          <li>Developed production-grade <strong>HTML5 and CSS3 frontend features</strong> integrated with REST APIs in an Agile environment</li>
-        </ul>
+        <div class="ach-list">
+          <div class="ach"><div class="ach-text">Built a <strong>React and JavaScript frontend dashboard</strong> to analyze tool adoption across 20+ engineering teams, enabling data-driven platform decisions</div><div class="ach-badge">20+ teams</div></div>
+          <div class="ach"><div class="ach-text">Built <strong>SQL-backed REST API services</strong> reducing resource underutilization by 30% through backend optimization</div><div class="ach-badge">30% efficiency</div></div>
+          <div class="ach"><div class="ach-text">Shipped a <strong>Node.js dashboard with Bash automation</strong>, collaborating with solution architects to present findings cross-functionally</div><div class="ach-badge">Node.js</div></div>
+          <div class="ach"><div class="ach-text">Developed production-grade <strong>HTML5 and CSS3 frontend features</strong> integrated with REST APIs in an Agile environment</div><div class="ach-badge">Agile</div></div>
+        </div>
       </div>
     </div>
   </div>
@@ -596,23 +596,6 @@ nav{
   <div class="sec-label">Skills</div>
   <h2 class="sec-h2">Tech <em>stack</em></h2>
   <div class="skills-wrap">
-
-    <div class="sk-group">
-      <div class="sk-group-label">Core &amp; Foundations</div>
-      <div class="sk-bubbles">
-        <span class="sk-b">Operating Systems</span>
-        <span class="sk-b">Computer Networks</span>
-        <span class="sk-b">Distributed Systems</span>
-        <span class="sk-b">Data Structures &amp; Algorithms</span>
-        <span class="sk-b">System Design</span>
-        <span class="sk-b">SDLC</span>
-        <span class="sk-b">Agile / Scrum</span>
-        <span class="sk-b">Object-Oriented Programming</span>
-        <span class="sk-b">Concurrency &amp; Multithreading</span>
-        <span class="sk-b">Client-Server Architecture</span>
-        <span class="sk-b">Version Control / Git</span>
-      </div>
-    </div>
 
     <div class="sk-group">
       <div class="sk-group-label">Languages</div>
@@ -709,6 +692,23 @@ nav{
         <span class="sk-b">OAuth 2.0</span>
         <span class="sk-b">Role-Based Access Control</span>
         <span class="sk-b">API Security</span>
+      </div>
+    </div>
+
+    <div class="sk-group">
+      <div class="sk-group-label">Core &amp; Foundations</div>
+      <div class="sk-bubbles">
+        <span class="sk-b">Operating Systems</span>
+        <span class="sk-b">Computer Networks</span>
+        <span class="sk-b">Distributed Systems</span>
+        <span class="sk-b">Data Structures &amp; Algorithms</span>
+        <span class="sk-b">System Design</span>
+        <span class="sk-b">SDLC</span>
+        <span class="sk-b">Agile / Scrum</span>
+        <span class="sk-b">Object-Oriented Programming</span>
+        <span class="sk-b">Concurrency &amp; Multithreading</span>
+        <span class="sk-b">Client-Server Architecture</span>
+        <span class="sk-b">Version Control / Git</span>
       </div>
     </div>
 
