@@ -258,25 +258,29 @@ nav{
 .pts li::before{content:'–';position:absolute;left:0;color:var(--muted)}
 .pts li strong{color:var(--text);font-weight:700}
 
-/* ══ SKILLS: uniform bubbles with accent border ══ */
-.skills-wrap{display:flex;flex-direction:column;gap:28px}
-.sk-group{}
-.sk-group-label{
+/* ══ SKILLS: 2-column card grid ══ */
+.sk-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.sk-card{
+  background:var(--card);border:1px solid var(--ac3);border-radius:14px;
+  padding:22px 24px;transition:border-color .2s;
+}
+.sk-card:hover{border-color:var(--ac)}
+.sk-card-label{
   font-size:10px;font-weight:800;color:var(--ac);
   text-transform:uppercase;letter-spacing:.14em;
-  margin-bottom:10px;display:flex;align-items:center;gap:8px;
+  margin-bottom:14px;display:flex;align-items:center;gap:8px;
 }
-.sk-group-label::after{content:'';flex:1;height:1px;background:var(--ac3);max-width:60px}
+.sk-card-label::after{content:'';flex:1;height:1px;background:var(--ac3)}
 .sk-bubbles{display:flex;flex-wrap:wrap;gap:7px}
-/* ALL bubbles get the same accent border: no tiers, just uniform */
 .sk-b{
   font-size:12px;font-weight:600;
-  padding:7px 14px;border-radius:8px;
+  padding:6px 13px;border-radius:7px;
   border:1px solid var(--ac3);
-  color:var(--text);background:var(--card);
+  color:var(--text);background:var(--bg2);
   transition:all .2s;cursor:default;
 }
 .sk-b:hover{color:var(--ac);border-color:var(--ac);background:var(--ac2);transform:translateY(-2px)}
+@media(max-width:680px){.sk-grid{grid-template-columns:1fr}}
 
 /* ══ PROJECTS ══ */
 .proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
@@ -656,153 +660,105 @@ nav{
 <div class="wrap">
   <div class="sec-label">Skills</div>
   <h2 class="sec-h2">Tech <em>stack</em></h2>
-  <div class="skills-wrap">
 
-    <div class="sk-group">
-      <div class="sk-group-label">Languages</div>
+  <div class="sk-grid">
+
+    <div class="sk-card">
+      <div class="sk-card-label">Languages</div>
       <div class="sk-bubbles">
-        <span class="sk-b">Python</span>
-        <span class="sk-b">Java</span>
-        <span class="sk-b">Go</span>
-        <span class="sk-b">C</span>
-        <span class="sk-b">C++</span>
-        <span class="sk-b">JavaScript</span>
-        <span class="sk-b">TypeScript</span>
-        <span class="sk-b">SQL</span>
-        <span class="sk-b">Bash</span>
-        <span class="sk-b">JSON</span>
-        <span class="sk-b">XML</span>
-        <span class="sk-b">YAML</span>
+        <span class="sk-b">Python</span><span class="sk-b">Java</span><span class="sk-b">Go</span>
+        <span class="sk-b">C</span><span class="sk-b">C++</span><span class="sk-b">C#</span>
+        <span class="sk-b">JavaScript</span><span class="sk-b">TypeScript</span><span class="sk-b">SQL</span>
+        <span class="sk-b">Bash</span><span class="sk-b">JSON</span><span class="sk-b">XML</span><span class="sk-b">YAML</span>
       </div>
     </div>
 
-    <div class="sk-group">
-      <div class="sk-group-label">Full-Stack &amp; APIs</div>
+    <div class="sk-card">
+      <div class="sk-card-label">Full-Stack &amp; APIs</div>
       <div class="sk-bubbles">
-        <span class="sk-b">React</span>
-        <span class="sk-b">HTML5 / CSS3</span>
-        <span class="sk-b">Tailwind</span>
-        <span class="sk-b">Spring Boot</span>
-        <span class="sk-b">FastAPI</span>
-        <span class="sk-b">Node.js</span>
-        <span class="sk-b">REST APIs</span>
-        <span class="sk-b">GraphQL</span>
-        <span class="sk-b">gRPC</span>
-        <span class="sk-b">Microservices</span>
-        <span class="sk-b">Kafka</span>
-        <span class="sk-b">Celery</span>
-        <span class="sk-b">WebSockets</span>
-        <span class="sk-b">Swagger</span>
+        <span class="sk-b">React</span><span class="sk-b">HTML5 / CSS3</span><span class="sk-b">Tailwind</span>
+        <span class="sk-b">Spring Boot</span><span class="sk-b">FastAPI</span><span class="sk-b">Node.js</span>
+        <span class="sk-b">REST APIs</span><span class="sk-b">GraphQL</span><span class="sk-b">gRPC</span>
+        <span class="sk-b">Microservices</span><span class="sk-b">Kafka</span><span class="sk-b">Celery</span>
+        <span class="sk-b">WebSockets</span><span class="sk-b">Swagger</span>
       </div>
     </div>
 
-    <div class="sk-group">
-      <div class="sk-group-label">AI &amp; Machine Learning</div>
+    <div class="sk-card">
+      <div class="sk-card-label">AI &amp; Machine Learning</div>
       <div class="sk-bubbles">
-        <span class="sk-b">LangChain</span>
-        <span class="sk-b">OpenAI API</span>
-        <span class="sk-b">RAG Pipelines</span>
-        <span class="sk-b">FAISS</span>
-        <span class="sk-b">Prompt Engineering</span>
-        <span class="sk-b">Agentic Workflows</span>
-        <span class="sk-b">Scikit-learn</span>
-        <span class="sk-b">NLP</span>
+        <span class="sk-b">LangChain</span><span class="sk-b">OpenAI API</span><span class="sk-b">RAG Pipelines</span>
+        <span class="sk-b">FAISS</span><span class="sk-b">Prompt Engineering</span><span class="sk-b">Agentic Workflows</span>
+        <span class="sk-b">Scikit-learn</span><span class="sk-b">NLP</span>
       </div>
     </div>
 
-    <div class="sk-group">
-      <div class="sk-group-label">Cloud &amp; DevOps</div>
+    <div class="sk-card">
+      <div class="sk-card-label">Cloud &amp; DevOps</div>
       <div class="sk-bubbles">
-        <span class="sk-b">AWS: EC2, S3, Lambda, SQS, RDS</span>
-        <span class="sk-b">GCP</span>
-        <span class="sk-b">Docker</span>
-        <span class="sk-b">Kubernetes</span>
-        <span class="sk-b">Jenkins</span>
-        <span class="sk-b">GitHub Actions</span>
-        <span class="sk-b">CI/CD</span>
+        <span class="sk-b">AWS: EC2, S3, Lambda, SQS, RDS</span><span class="sk-b">GCP</span>
+        <span class="sk-b">Docker</span><span class="sk-b">Kubernetes</span><span class="sk-b">Jenkins</span>
+        <span class="sk-b">GitHub Actions</span><span class="sk-b">CI/CD</span>
       </div>
     </div>
 
-    <div class="sk-group">
-      <div class="sk-group-label">Databases &amp; Storage</div>
+    <div class="sk-card">
+      <div class="sk-card-label">Databases &amp; Storage</div>
       <div class="sk-bubbles">
-        <span class="sk-b">PostgreSQL</span>
-        <span class="sk-b">MySQL</span>
-        <span class="sk-b">Redis</span>
-        <span class="sk-b">Cassandra</span>
-        <span class="sk-b">DynamoDB</span>
-        <span class="sk-b">Neo4j</span>
-        <span class="sk-b">Query Optimization</span>
-        <span class="sk-b">Schema Design</span>
+        <span class="sk-b">PostgreSQL</span><span class="sk-b">MySQL</span><span class="sk-b">Redis</span>
+        <span class="sk-b">Cassandra</span><span class="sk-b">DynamoDB</span><span class="sk-b">Neo4j</span>
+        <span class="sk-b">Query Optimization</span><span class="sk-b">Schema Design</span>
       </div>
     </div>
 
-    <div class="sk-group">
-      <div class="sk-group-label">Observability &amp; Quality</div>
+    <div class="sk-card">
+      <div class="sk-card-label">Observability &amp; Quality</div>
       <div class="sk-bubbles">
-        <span class="sk-b">Prometheus</span>
-        <span class="sk-b">Grafana</span>
-        <span class="sk-b">OpenTelemetry</span>
-        <span class="sk-b">Structured Logging</span>
-        <span class="sk-b">Test-Driven Development</span>
-        <span class="sk-b">Unit &amp; Integration Testing</span>
-        <span class="sk-b">POSIX APIs</span>
+        <span class="sk-b">Prometheus</span><span class="sk-b">Grafana</span><span class="sk-b">OpenTelemetry</span>
+        <span class="sk-b">Structured Logging</span><span class="sk-b">Test-Driven Development</span>
+        <span class="sk-b">Unit &amp; Integration Testing</span><span class="sk-b">POSIX APIs</span>
       </div>
     </div>
 
-    <div class="sk-group">
-      <div class="sk-group-label">Operating Systems</div>
+    <div class="sk-card">
+      <div class="sk-card-label">Security</div>
       <div class="sk-bubbles">
-        <span class="sk-b">Windows</span>
-        <span class="sk-b">Linux</span>
+        <span class="sk-b">JWT Authentication</span><span class="sk-b">OAuth 2.0</span>
+        <span class="sk-b">Role-Based Access Control</span><span class="sk-b">API Security</span>
       </div>
     </div>
 
-    <div class="sk-group">
-      <div class="sk-group-label">Security</div>
+    <div class="sk-card">
+      <div class="sk-card-label">Operating Systems</div>
       <div class="sk-bubbles">
-        <span class="sk-b">JWT Authentication</span>
-        <span class="sk-b">OAuth 2.0</span>
-        <span class="sk-b">Role-Based Access Control</span>
-        <span class="sk-b">API Security</span>
+        <span class="sk-b">Windows</span><span class="sk-b">Linux</span>
       </div>
     </div>
 
-    <div class="sk-group">
-      <div class="sk-group-label">Tools</div>
+    <div class="sk-card">
+      <div class="sk-card-label">Tools</div>
       <div class="sk-bubbles">
-        <span class="sk-b">Figma</span>
-        <span class="sk-b">Axure RP</span>
-        <span class="sk-b">JFrog Artifactory</span>
-        <span class="sk-b">BlackDuck</span>
-        <span class="sk-b">Jira</span>
-        <span class="sk-b">Confluence</span>
-        <span class="sk-b">Postman</span>
-        <span class="sk-b">IntelliJ IDEA</span>
-        <span class="sk-b">VS Code</span>
-        <span class="sk-b">pgAdmin</span>
-        <span class="sk-b">DBeaver</span>
+        <span class="sk-b">Figma</span><span class="sk-b">Axure RP</span><span class="sk-b">JFrog Artifactory</span>
+        <span class="sk-b">BlackDuck</span><span class="sk-b">Jira</span><span class="sk-b">Confluence</span>
+        <span class="sk-b">Postman</span><span class="sk-b">IntelliJ IDEA</span><span class="sk-b">VS Code</span>
+        <span class="sk-b">pgAdmin</span><span class="sk-b">DBeaver</span>
       </div>
     </div>
 
-    <div class="sk-group">
-      <div class="sk-group-label">Core &amp; Foundations</div>
+    <div class="sk-card">
+      <div class="sk-card-label">Core &amp; Foundations</div>
       <div class="sk-bubbles">
-        <span class="sk-b">Operating Systems</span>
-        <span class="sk-b">Computer Networks</span>
-        <span class="sk-b">Distributed Systems</span>
-        <span class="sk-b">Data Structures &amp; Algorithms</span>
-        <span class="sk-b">System Design</span>
-        <span class="sk-b">SDLC</span>
-        <span class="sk-b">Agile / Scrum</span>
-        <span class="sk-b">Object-Oriented Programming</span>
-        <span class="sk-b">Concurrency &amp; Multithreading</span>
-        <span class="sk-b">Client-Server Architecture</span>
-        <span class="sk-b">Version Control / Git</span>
+        <span class="sk-b">Operating Systems</span><span class="sk-b">Computer Networks</span>
+        <span class="sk-b">Distributed Systems</span><span class="sk-b">Data Structures &amp; Algorithms</span>
+        <span class="sk-b">System Design</span><span class="sk-b">SDLC</span><span class="sk-b">Agile / Scrum</span>
+        <span class="sk-b">Object-Oriented Programming</span><span class="sk-b">Concurrency &amp; Multithreading</span>
+        <span class="sk-b">Client-Server Architecture</span><span class="sk-b">Version Control / Git</span>
       </div>
     </div>
 
   </div>
+</div>
+</section>
 <section class="section fade" id="projects">
 <div class="wrap">
   <div class="sec-label">Projects</div>
@@ -876,7 +832,7 @@ const P={
   p6:{type:'RAG · Full-Stack',name:'Context-Aware Knowledge Assistant',metrics:[{v:'<500ms',l:'Latency'},{v:'100+',l:'Users'},{v:'60%',l:'Lookup cut'}],pts:['FAISS semantic search + Redis caching: <strong>&lt;500ms latency</strong>','Async Celery workers for <strong>continuous doc ingestion</strong>','<strong>100+ concurrent users</strong> below 500ms','60% reduction in documentation lookup time'],stack:['Python','FastAPI','FAISS','OpenAI API','PostgreSQL','Redis','Celery','Docker']},
   p7:{type:'ML · Full-Stack',name:'Reality Check',github:'https://github.com/vindhya-srinivasan/reality-check',metrics:[{v:'Full-Stack',l:'Architecture'},{v:'ML',l:'Backend'},{v:'AWS',l:'Deployed'}],pts:['<strong>Python FastAPI + PostgreSQL</strong> backend serving ML-based misinformation classification','Model predictions served via REST API with modular, logged architecture','Containerized with <strong>Docker on AWS</strong>: reproducible builds, consistent runtime','Performance monitoring and logging pipelines for production health tracking'],stack:['Python','Scikit-learn','FastAPI','React','Docker','PostgreSQL','AWS']},
   p8:{type:'Algorithms · Visualization',name:"Rubik's Cube Solver",metrics:[{v:'Optimal',l:'Solution path'},{v:'3D',l:'Visualization'},{v:'IDA*',l:'Algorithm'}],pts:["<strong>IDA* (Iterative Deepening A*)</strong> algorithm solves any valid cube configuration optimally","Interactive 3D visualization with <strong>Three.js and React</strong>: animates each solution step","FastAPI backend processes cube state via REST and returns the move sequence","Handles all 43 quintillion possible states deterministically"],stack:['Python','IDA* / BFS','React','Three.js','FastAPI']},
-  p9:{type:'Game Dev · Prototype',name:'Word Panic',github:'https://github.com/vindhya-srinivasan/word-panic',metrics:[{v:'Hangman',l:'Word mechanic'},{v:'Pac-Man',l:'Chase mechanic'},{v:'Platformer',l:'Game genre'}],pts:['<strong>Platformer puzzle game</strong> fusing Hangman word-guessing with Pac-Man chase mechanics','Player navigates a side-scrolling level, <strong>collecting letters</strong> hidden across platforms','Letters not found in the hidden word <strong>turn hostile</strong> — they chase and attack the player','Player must <strong>survive the letter onslaught</strong> for a set time while completing the word','<strong>Escalating difficulty</strong>: incorrect letters spawn faster and move more aggressively over time','Built in <strong>Unity with C#</strong>: custom collision detection, enemy AI, and game state management'],stack:['C#','Unity']}
+  p9:{type:'Game Dev · Prototype',name:'Word Panic',github:'https://github.com/vindhya-srinivasan/word-panic',playUrl:'https://vindhya-srinivasan.github.io/word-panic/?jr_id=69e022fdaba61f141731f9b3',metrics:[{v:'Hangman',l:'Word mechanic'},{v:'Pac-Man',l:'Chase mechanic'},{v:'Platformer',l:'Game genre'}],pts:['<strong>Platformer puzzle game</strong> fusing Hangman word-guessing with Pac-Man chase mechanics','Player navigates a side-scrolling level, <strong>collecting letters</strong> hidden across platforms','Letters not found in the hidden word <strong>turn hostile</strong> — they chase and attack the player','Player must <strong>survive the letter onslaught</strong> for a set time while completing the word','<strong>Escalating difficulty</strong>: incorrect letters spawn faster and move more aggressively over time','Built in <strong>Unity with C#</strong>: custom collision detection, enemy AI, and game state management'],stack:['C#','Unity']}
 };
 
 function openModal(id){
@@ -890,6 +846,7 @@ function openModal(id){
     <div class="m-stk-lbl">Tech Stack</div>
     <div class="m-stack">${p.stack.map(s=>`<span class="mtag">${s}</span>`).join('')}</div>
     ${p.github ? `<a href="${p.github}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;padding:9px 18px;border:1px solid var(--ac3);border-radius:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ac);text-decoration:none;transition:all .2s;" onmouseover="this.style.background='var(--ac2)'" onmouseout="this.style.background='transparent'"><svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>View on GitHub</a>` : ''}
+    ${p.playUrl ? `<a href="${p.playUrl}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;margin-left:10px;padding:9px 18px;border-radius:8px;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--bg);background:var(--ac);text-decoration:none;transition:all .2s;" onmouseover="this.style.background='var(--ac-d)'" onmouseout="this.style.background='var(--ac)'">&#9654; Play Now</a>` : ''}
   `;
   document.getElementById('mBg').classList.add('open');
   document.body.style.overflow='hidden';
@@ -980,7 +937,13 @@ cForm.addEventListener('submit',async e=>{
 </script>
 
 <script>
-function toggleExp(btn){
+function switchTab(btn, panelId) {
+  document.querySelectorAll('.sk-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.sk-panel').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById(panelId).classList.add('active');
+}
+
   var body = btn.nextElementSibling;
   var isOpen = body.classList.toggle('open');
   btn.classList.toggle('open');
@@ -989,7 +952,7 @@ function toggleExp(btn){
       n.textContent = isOpen ? ' Hide details' : ' Show details';
     }
   }
-}
+
 </script>
 </body>
 </html>
